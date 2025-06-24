@@ -17,4 +17,4 @@ jobs:
         run: |
           echo "${{ secrets.EC2_SSH_KEY }}" > key.pem
           chmod 600 key.pem
-          scp -o StrictHostKeyChecking=no -i key.pem -r * ec2-user@${{ secrets.EC2_HOST }}:/var/www/devops-site
+          scp -o StrictHostKeyChecking=no -i key.pem -r index.html about.html style.css ec2-user@${{ secrets.EC2_HOST }}:/var/www/devops-site
